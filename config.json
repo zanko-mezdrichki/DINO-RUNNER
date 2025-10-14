@@ -1,0 +1,19 @@
+{
+    "values": {
+        "Dino_mass": 50,
+        "Grass_frict": 0.4,
+        "Sand_frict": 0.3,
+        "Asphalt_frict": 0.7,
+        "Ice_frict": 0.08,
+        "Air_coeff": 0.9,
+        "Coll_coeff": 1,
+        "Gravity": 9.81,
+        "Wind_strenght": 5
+    },
+    "optionals": {
+        "Wind": true,
+        "Surfaces": true,
+        "Air resistance": true,
+        "Trampolines": true
+    }
+}
