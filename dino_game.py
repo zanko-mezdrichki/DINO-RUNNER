@@ -42,36 +42,27 @@ def display_score(current_time):
 def display_wind_indicator(wind_system):
     if not optionals_dict.get("Wind", False) or not wind_system.active:
         return
-    
-    # Usa la velocità del vento globale
+
     avg_vel_x = wind_system.vel_x
     avg_vel_y = wind_system.vel_y
     
-    # Posizione dell'indicatore (in alto a destra)
     center_x, center_y = 900, 50
     
-    # Disegna cerchio di sfondo
     pygame.draw.circle(screen, (255, 255, 255, 128), (center_x, center_y), 35, 2)
     
-    # Calcola lunghezza e angolo della freccia
     magnitude = math.sqrt(avg_vel_x**2 + avg_vel_y**2)
     if magnitude > 0.1:
-        # Scala la freccia (max 25 pixel)
         arrow_length = min(magnitude * 5, 25)
         angle = math.atan2(avg_vel_y, avg_vel_x)
         
-        # Punto finale della freccia
         end_x = center_x + arrow_length * math.cos(angle)
         end_y = center_y + arrow_length * math.sin(angle)
         
-        # Colore basato sull'intensità (da verde a rosso)
         intensity = min(magnitude / 5.0, 1.0)
         color = (int(255 * intensity), int(255 * (1 - intensity)), 0)
         
-        # Disegna la linea principale
         pygame.draw.line(screen, color, (center_x, center_y), (end_x, end_y), 3)
-        
-        # Disegna la punta della freccia
+
         arrow_size = 8
         arrow_angle = 0.5
         left_x = end_x - arrow_size * math.cos(angle - arrow_angle)
@@ -81,13 +72,11 @@ def display_wind_indicator(wind_system):
         
         pygame.draw.polygon(screen, color, [(end_x, end_y), (left_x, left_y), (right_x, right_y)])
         
-        # Mostra intensità numerica
         font = pygame.font.Font(None, 20)
         text = font.render(f"{magnitude:.1f}", False, color)
         text_rect = text.get_rect(center=(center_x, center_y + 45))
         screen.blit(text, text_rect)
     else:
-        # Nessun vento - disegna un punto
         pygame.draw.circle(screen, (100, 100, 100), (center_x, center_y), 3)
 
 class WindSystem:
@@ -96,7 +85,6 @@ class WindSystem:
         self.duration = 5.0
         self.time_elapsed = 0.0
         
-        # Velocità del vento globale
         self.start_x = random.uniform(-Wind_strenght, Wind_strenght)
         self.start_y = random.uniform(-Wind_strenght, Wind_strenght)
         self.end_x = random.uniform(-Wind_strenght, Wind_strenght)
@@ -399,7 +387,6 @@ class Wind(pygame.sprite.Sprite):
 
         self.rect = self.image.get_rect(midbottom=(x_start, random.uniform(*y_range)))
         
-        # Riferimento al sistema di vento globale
         self.wind_system = wind_system
 
     def animate(self):
@@ -413,11 +400,9 @@ class Wind(pygame.sprite.Sprite):
       if optionals_dict["Wind"]==True:
         self.animate()
 
-        # Muovi secondo la velocità del vento globale
         self.rect.x += self.wind_system.vel_x * PIXELS_PER_METER * dt
         self.rect.y += self.wind_system.vel_y * PIXELS_PER_METER * dt
  
-        # Se esce dallo schermo, elimina lo sprite
         if (self.rect.bottom >= 450 or self.rect.top < 0 or 
             self.rect.right < 0 or self.rect.left > 1000):
             self.kill()
@@ -447,9 +432,6 @@ class Trampolines(pygame.sprite.Sprite):
         if self.rect.right < 0:
             self.kill()
 
-
-
-
 # ------------------ setup pygame ------------------
 pygame.init()
 screen = pygame.display.set_mode((1000, 600))
@@ -463,7 +445,6 @@ player = Player()
 player_group = pygame.sprite.Group(player)
 background = Backgrounds()
 
-# Sistema di vento globale
 wind_system = WindSystem()
 wind_group = pygame.sprite.Group()
 
@@ -482,7 +463,6 @@ def create_trampoline():
     trampoline.set_trampoline(current_time)
     return trampoline
 
-# Timer ostacoli
 OBSTACLE_TIMER = pygame.USEREVENT + 1
 pygame.time.set_timer(OBSTACLE_TIMER, randint(2000, 2200))
 
@@ -507,7 +487,6 @@ while running:
     if game_active:
         background.update_surface(obstacles_group)
 
-        # Aggiorna il sistema di vento globale
         wind_system.update(dt)
         wind_system.apply_to_player(player, dt)
 
@@ -557,7 +536,6 @@ while running:
         if pygame.sprite.spritecollide(player, obstacles_group, False, pygame.sprite.collide_mask):
             game_active=False
     else:
-     # Schermata intro
         screen.fill("#CBEA23")
         font_big = pygame.font.Font("font/Super_Joyful.ttf", 70)
         title = font_big.render("GAME OVER", False, "#4DC51D")
