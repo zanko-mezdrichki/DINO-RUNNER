@@ -1,14 +1,14 @@
 # 🦖 DINO RUNNER
 
-A physics-based dinosaur runner game with realistic mechanics and customizable parameters.
+A dinosaur runner game with the introduction of some physical concepts. It does not aim to realistically simulate physical effects.
 
 ## 📖 Description
 
-DINO RUNNER is an educational game that combines fun gameplay with real physics simulation. Control a dinosaur character through various environments while experiencing realistic forces like friction, wind resistance, and gravity.
+DINO RUNNER is an educational game that combines fun gameplay and some physical concepts. Control a dinosaur character through various environments while experiencing realistic forces like friction, wind resistance, and gravity.
 
 ## ✨ Features
 
-- **Realistic Physics Engine**: Accurate simulation of forces, friction, and collisions
+- **Physics Engine**: Simulation of forces, friction, and collisions
 - **Customizable Parameters**: Adjust mass, gravity, friction coefficients, and more
 - **Multiple Environments**: Grass, sand, ice, and asphalt surfaces with different properties
 - **Dynamic Weather System**: Wind forces that affect gameplay
