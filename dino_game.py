@@ -7,7 +7,6 @@ import os
 from random import choice, randint
 from sys import exit
 
-# --- config ---
 with open("config.json", "r") as f:
     config = json.load(f)
 
@@ -432,7 +431,6 @@ class Trampolines(pygame.sprite.Sprite):
         if self.rect.right < 0:
             self.kill()
 
-# ------------------ setup pygame ------------------
 pygame.init()
 screen = pygame.display.set_mode((1000, 600))
 pygame.display.set_caption("Dino Runner")
