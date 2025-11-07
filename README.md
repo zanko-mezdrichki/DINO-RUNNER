@@ -50,6 +50,10 @@ Wind Strength: Control wind force intensity
 
 Collision Coefficients: Modify bounce properties
 
+## 🕹️ Preview
+
+In the preview folder there are images and videos showing the menu and the game; it is recommended to watch them.
+
 ## 🛠️ Technologies Used
 Python 3
 
