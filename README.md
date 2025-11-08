@@ -2,7 +2,7 @@
 
 A dinosaur runner game with the introduction of some physical concepts. It does not aim to realistically simulate physical effects. Designed to try to combine, not accurately, fun and physics.
 
-## ✨ Features
+# Features
 
 - **Physics Concepts**: Simulation of forces, friction, and collisions
 - **Customizable Parameters**: Adjust mass, gravity, friction coefficients, and more
@@ -12,7 +12,7 @@ A dinosaur runner game with the introduction of some physical concepts. It does 
 - **Special Elements**: Trampolines with collision coefficients
 - **Progressive Difficulty**: Increasing challenge as your score grows
 
-## 🎮 How to Play
+# How to Play
 
 ### Controls
 - **LEFT/RIGHT ARROW**: Move dinosaur
@@ -22,7 +22,7 @@ A dinosaur runner game with the introduction of some physical concepts. It does 
 - **Standard Mode**: Pre-configured physics settings
 - **Experimental Mode**: Fully customizable parameters
 
-## 🚀 Installation & Usage
+# Installation & Usage
 
 1. Clone the repository:
 ```bash
@@ -37,7 +37,7 @@ pip install pygame PyQt5
  ```bash
 python gui_game.py
 ```
-## ⚙️ Physics Parameters
+# Physics Parameters
 Dino Mass: Adjust the dinosaur's weight
 
 Surface Friction: Modify friction for different terrains
@@ -50,7 +50,7 @@ Wind Strength: Control wind force intensity
 
 Collision Coefficients: Modify bounce properties
 
-## 🕹️ Preview
+# Preview
 
 In the preview folder there are images showing the menu of the game.
 
@@ -60,14 +60,14 @@ To see the game:
 
 -Experimental mode: [https://youtu.be/BUHRnjPBS1o](https://youtu.be/BUHRnjPBS1o)
 
-## 🛠️ Technologies Used
-Python 3
+# Technologies Used
+- Python 3.12.11
 
-Pygame - Game development
+- Pygame - Game development
 
-PyQt5 - GUI interface
+- PyQt5 - GUI interface
 
-JSON - Configuration files
+- JSON - Configuration files
 
-## 📄 License
+# License
 This project is licensed under the [MIT License](./LICENSE). See the LICENSE file for more details.
