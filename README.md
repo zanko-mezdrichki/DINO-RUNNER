@@ -56,7 +56,7 @@ In the preview folder there are images showing the menu of the game.
 
 To see the game:
 
--Standard mode: [https://youtu.be/Owvl1rVYnk4](https://youtu.be/Owvl1rVYnk4)
+-Standard mode: [https://youtu.be/qKTdPZq6QFs](https://youtu.be/qKTdPZq6QFs)
 
 -Experimental mode: [https://youtu.be/BUHRnjPBS1o](https://youtu.be/BUHRnjPBS1o)
 
